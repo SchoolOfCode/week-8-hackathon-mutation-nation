@@ -1,4 +1,5 @@
 import  React, { useEffect, useRef, useState } from "react";
+import "./Stopwatch.css";
 
 
 //MVP 1 - Restart button
@@ -43,18 +44,23 @@ export default function Stopwatch() {
   
   return (
     <>
-      <h1> {time} </h1>
-      
+    <div className="container">
+
+      <h1 className="time"> {time} </h1>
+
+      <div className="button">
       <button className="restart" onClick={resetTimer}> Restart </button>
       <button className="start" onClick={startTimer}> Start </button>
       <button className="pause" onClick={pauseTimer}> Pause </button>
       <button className="lap" onClick={handleLap} disabled={!isRunning}> Lap </button>
+      </div>
 
       <ul>
         {laps.map((lap, index) => (
           <li key={index}>Lap {index + 1}: {lap} sec </li>
         ))}
       </ul>
+      </div>
     </>
   );
   };
