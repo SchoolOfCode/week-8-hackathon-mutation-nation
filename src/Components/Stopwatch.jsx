@@ -4,6 +4,9 @@ import React, { useEffect, useRef, useState } from "react"
 //MVP 1 - Restart button
 export default function Stopwatch() {
   const [time, setTime] = useState(0)
+
+  const [laps, setLaps] = useState([])
+
   function handleRestart() {
     setTime(0)
   }
@@ -25,9 +28,10 @@ export default function Stopwatch() {
     return (
       <>
         <h1> {time} </h1>
+        
         <button className="restart" onClick={()=>setTime(0)}> Restart </button>
         <button className="start"> Start </button>
-        <button className="pause"> Pause </button>
+        <button className="pause" onClick={()=> clearInterval(timeHandler.current)}> Pause </button>
         <button className="lap"> Lap </button>
       </>
     )
