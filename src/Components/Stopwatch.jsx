@@ -38,7 +38,8 @@ export default function Stopwatch() {
   
   function handleLap() {
     if (isRunning) {
-      setLaps([...laps, time]);
+      setLaps([...laps, time])
+      setTime(0); // Reset the counter to 0
     }
   };
   
@@ -56,11 +57,17 @@ export default function Stopwatch() {
       </div>
 
       <ul>
-        {laps.map((lap, index) => (
-          <li key={index}>Lap {index + 1}: {lap} sec </li>
-        ))}
+
+      {laps.map((lap, index) => {
+          const isShortest = lap === Math.min(...laps); // Declare JavaScript logic here
+          return (
+            <li key={index}>
+              Lap {index + 1}: {lap} sec {isShortest && <span>🏆</span>}
+            </li>
+          );
+        })}
       </ul>
-      </div>
-    </>
-  );
-  };
+    </div>
+  </>
+);
+}
