@@ -50,7 +50,7 @@ export default function Stopwatch() {
       <h1 className="time"> {time} </h1>
 
       <div className="button">
-      <button className="restart" onClick={resetTimer}> Restart </button>
+      <button className="reset" onClick={resetTimer}> Reset </button>
       <button className="start" onClick={startTimer}> Start </button>
       <button className="pause" onClick={pauseTimer}> Pause </button>
       <button className="lap" onClick={handleLap} disabled={!isRunning}> Lap </button>
