@@ -2,7 +2,11 @@ import  React, { useEffect, useRef, useState } from "react";
 import "./Stopwatch.css";
 
 
-//MVP 1 - Restart button
+//MVP 1 - Reset button
+//MVP 2 - Start button
+//MVP 3 - Pause button
+//MVP 4 - Lap button
+
 export default function Stopwatch() {
   const [time, setTime] = useState(0)
   const [isRunning, setIsRunning] = useState(false);
