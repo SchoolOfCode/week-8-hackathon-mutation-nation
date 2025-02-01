@@ -63,7 +63,7 @@ export default function Stopwatch() {
       <ul>
 
       {laps.map((lap, index) => {
-          const isShortest = lap === Math.min(...laps); // Declare JavaScript logic here
+          const isShortest = lap === Math.min(...laps); 
           return (
             <li key={index}>
               Lap {index + 1}: {lap} sec {isShortest && <span>🏆</span>}
